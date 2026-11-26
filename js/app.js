@@ -706,6 +706,21 @@
           displayLatin(s.perfect) + '</td><td>' + displayLatin(s.supine) + '</td><td>' + s.dutch + '</td></tr>';
       });
       html += '</tbody></table></div>';
+    } else if (kind === "tijden") {
+      html += '<div class="table-wrap"><table><thead><tr><th>Tijd</th><th>Van amāre</th><th>Nederlands</th><th>Gebruik</th></tr></thead><tbody>' +
+        '<tr><td>Praesens</td><td>amō</td><td>ik houd van</td><td>nu / algemeen</td></tr>' +
+        '<tr><td>Imperfectum</td><td>amābam</td><td>ik hield van / was aan het houden</td><td>bezig of gewoonte in het verleden</td></tr>' +
+        '<tr><td>Perfectum</td><td>amāvī</td><td>ik heb gehouden / hield</td><td>afgerond verleden, verhaaltijd</td></tr>' +
+        '<tr><td>Plusquamperfectum</td><td>amāveram</td><td>ik had gehouden</td><td>eerder verleden</td></tr>' +
+        '<tr><td>Futurum I</td><td>amābō</td><td>ik zal houden</td><td>toekomst</td></tr>' +
+        '<tr><td>Futurum II</td><td>amāverō</td><td>ik zal gehouden hebben</td><td>voltooide toekomst</td></tr>' +
+        '</tbody></table></div>' +
+        '<h3>Passief, conjunctief en supinum</h3><p class="gram-note">Passief: <em>amātur</em> (hij wordt bemind), <em>amātus est</em> (hij is bemind). Conjunctief: <em>amet</em> (dat hij beminne), vaak na <em>ut</em>, <em>nē</em> of <em>cum</em>. Het supinum op <em>-um</em> staat na beweging (<em>vēnī amātum</em>); op <em>-ū</em> na een bijvoeglijk naamwoord (<em>iūcundum audītū</em>).</p>';
+    } else if (kind === "syntaxis") {
+      html += '<h3>Accusativus cum infinitivo (AcI)</h3><p class="gram-note">Na werkwoorden van zeggen, zien, weten en willen staat het onderwerp van de bijzin in de accusatief en het gezegde in de infinitief: <em>dīcit mē venīre</em> — hij zegt dat ik kom. Met een perfectum infinitief: <em>dīcit mē vēnisse</em> — hij zegt dat ik kwam.</p>' +
+        '<h3>Ablativus absolutus (AbA)</h3><p class="gram-note">Een bijzin zonder voegwoord, met beide leden in de ablativus: <em>urbe captā, hostēs discessērunt</em> — nadat de stad was ingenomen, vertrokken de vijanden. Het deelwoord hoort bij het zelfstandig naamwoord in dezelfde ablativus.</p>' +
+        '<h3>Participia</h3><p class="gram-note"><em>portāns</em> (dragend), <em>portātus</em> (gedragen), <em>portātūrus</em> (zullend dragen) en <em>portandus</em> (te dragen). Ze gedragen zich als bijvoeglijk naamwoord: gelijk in naamval, geslacht en getal.</p>' +
+        '<h3>Overige bouwstenen</h3><p class="gram-note"><strong>Relatief:</strong> <em>quī, quae, quod</em> (die / wat). <strong>Voorwaarde:</strong> <em>sī</em> met indicatief (werkelijk) of conjunctief (mogelijk). <strong>Doel en gevolg:</strong> <em>ut</em> + conjunctief. <strong>Gerundium:</strong> <em>ad portandum</em> (om te dragen). <strong>Locatief:</strong> <em>Rōmae</em> (in Rome), <em>Rōmā</em> (uit Rome).</p>';
     }
     $("grammar-content").innerHTML = html;
   }
