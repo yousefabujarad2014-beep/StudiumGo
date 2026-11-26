@@ -7,14 +7,14 @@ Het idee is vergelijkbaar met verbum.be (flashcards per caput, directe feedback,
 ## Wat erin zit (en beter is)
 
 - ✅ **Volledig gratis** — geen betaalmuur, geen proefversie.
-- 👤 **Account is verplicht** — maak een profiel met gebruikersnaam, wachtwoord en **leerjaar** (1e, 2de of 3de middelbaar). Je voortgang, fouten, eigen woorden en instellingen worden **per account apart** bewaard. Er is geen gastmodus.
-- 📖 **Altijd Pegasus Novus** — je kiest geen boek; StudiumGo gebruikt altijd **Pegasus Novus**. Bij het aanmaken van je account kies je je leerjaar, waarna je **Pegasus Novus 1, 2 of 3** krijgt met een eigen woordniveau per leerjaar. Daarna volgt `caput 1 … 12`, een bereik (bijv. caput 2 t/m 4) en desnoods een **woordnummer-bereik** (bijv. woord 1 t/m 20). De woordindeling is eigen en vrij — geen officiële boeklijsten.
-- 📚 **448 Latijnse woorden**, verdeeld over **12 capita** (familie, stad, werkwoorden, getallen, grammatica, oorlog, natuur, eten, gevoel, abstracte begrippen…).
+- 👤 **Account is verplicht** — maak een profiel met gebruikersnaam, wachtwoord en **leerjaar** (1e tot en met 6de middelbaar). Je voortgang, fouten, eigen woorden en instellingen worden **per account apart** bewaard. Er is geen gastmodus.
+- 📖 **Altijd Pegasus Novus** — je kiest geen boek; StudiumGo gebruikt altijd **Pegasus Novus**. Bij het aanmaken van je account kies je je leerjaar, waarna je **Pegasus Novus 1 t/m 6** krijgt met een eigen woordniveau per leerjaar. Daarna volgt `caput 1 … 12`, een bereik (bijv. caput 2 t/m 4) en desnoods een **woordnummer-bereik** (bijv. woord 1 t/m 20). De woordindeling is eigen en vrij — geen officiële boeklijsten.
+- 📚 **736 Latijnse woorden**, verdeeld over **12 capita** en **6 leerjaren**: 448 basiswoorden (1e–3de) en 288 geavanceerde woorden (4e–6de).
 - 🔁 **Slimme herhaling** — SM-2-achtige spacing: woorden die je fout had komen sneller terug, woorden die je beheerst later.
 - ↔️ **Twee richtingen** — Latijn → Nederlands, Nederlands → Latijn of gemengd. Directe feedback met het juiste antwoord.
 - 📊 **Voortgangsanalyse** — juistheid, sessies, minuten, beste streak, beheersing per caput en je lastige woorden in één overzicht.
 - 🏆 **Ranglijst** — vergelijk de lokale profielen op dit apparaat op punten, beheerste woorden en streaks.
-- 🧭 **Studiegids** — uitleg over Latijn leren, een plan voor je toetsdag, de vier stamtijden en studiedtips.
+- 🧭 **Studiegids** — uitleg over Latijn leren, een plan voor je toetsdag, de vier stamtijden, studiedtips en een apart hoofdstuk voor **4e–6de middelbaar**.
 - ⚔️ **Stamtijden** — 30 werkwoorden met praesens, infinitief, perfectum en supinum, plus een oefenmodus.
 - 📜 **Grammatica** — naamvallen, vijf verbuigingen en vier vervoegingen in overzichtelijke tabellen.
 - 🔎 **Woordenboek** — zoek door alle woorden, met “beheerst"-label per woord.
