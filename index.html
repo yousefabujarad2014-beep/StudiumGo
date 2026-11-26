@@ -259,6 +259,18 @@
         <h2>Woordenboek</h2>
         <input class="search" id="dict-search" type="search" placeholder="Zoek Latijn of Nederlands…" aria-label="Zoek woorden" />
         <p class="muted" id="dict-count"></p>
+        <p class="muted">Staat er een fout in een vertaling? Klik op ✎ bij het woord en vul de juiste betekenis in. De aanpassing geldt direct in alle oefeningen en staat in je account.</p>
+        <div class="correction-box hidden" id="dict-correction">
+          <label class="field-label" for="correction-latin">Woord</label>
+          <input class="search" id="correction-latin" type="text" readonly aria-label="Te corrigeren woord" />
+          <label class="field-label" for="correction-dutch">Juiste Nederlandse betekenis</label>
+          <input class="search" id="correction-dutch" type="text" aria-label="Juiste Nederlandse betekenis" />
+          <div class="panel-actions">
+            <button class="btn primary" id="correction-save" type="button">✓ Opslaan</button>
+            <button class="btn ghost" id="correction-reset" type="button">Standaard herstellen</button>
+            <button class="btn ghost" id="correction-cancel" type="button">Annuleren</button>
+          </div>
+        </div>
         <div class="dict-list" id="dict-list"></div>
         <div class="panel-actions"><button class="btn ghost" id="dict-back" type="button">← Terug</button></div>
       </div>

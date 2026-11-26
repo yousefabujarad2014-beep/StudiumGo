@@ -20,6 +20,7 @@
       achievements: {},
       errors: [],
       custom: [],
+      corrections: {},
       settings: {
         theme: "dark",
         macrons: true,
@@ -50,6 +51,7 @@
         if (data.achievements && typeof data.achievements === "object") base.achievements = data.achievements;
         if (Array.isArray(data.errors)) base.errors = data.errors.slice(-200);
         if (Array.isArray(data.custom)) base.custom = data.custom;
+        if (data.corrections && typeof data.corrections === "object") base.corrections = data.corrections;
         if (data.settings) Object.assign(base.settings, data.settings);
       }
     } catch (e) { /* corrupt: begin opnieuw */ }
@@ -185,6 +187,29 @@
     write(data);
   }
 
+  // Correcties op de woordenlijst: key = genormaliseerd Latijn, waarde = juiste NL.
+  function getCorrections() { return read().corrections; }
+
+  function getCorrection(key) {
+    var k = String(key || "").toLowerCase();
+    return read().corrections[k] || "";
+  }
+
+  function setCorrection(key, dutch) {
+    var data = read();
+    var k = String(key || "").toLowerCase();
+    var value = String(dutch || "").trim();
+    if (!k) return "";
+    if (value) data.corrections[k] = value;
+    else delete data.corrections[k];
+    write(data);
+    return value;
+  }
+
+  function correctionCount() {
+    return Object.keys(read().corrections).length;
+  }
+
   var ACHIEVEMENTS = [
     { id: "eerste", ico: "🌱", title: "Eerste pas", desc: "Rond je eerste sessie af" },
     { id: "tien", ico: "🔟", title: "Tien woorden", desc: "Beheers 10 woorden" },
@@ -246,6 +271,10 @@
     getCustom: getCustom,
     addCustom: addCustom,
     removeCustom: removeCustom,
+    getCorrections: getCorrections,
+    getCorrection: getCorrection,
+    setCorrection: setCorrection,
+    correctionCount: correctionCount,
     getAchievements: getAchievements,
     unlock: unlock,
     exportData: exportData,

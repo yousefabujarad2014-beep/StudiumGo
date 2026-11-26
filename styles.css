@@ -302,6 +302,19 @@ body[data-theme="light"] .custom-form input { background: rgba(255,255,255,.7); 
 .dict-row .nl { color: var(--ink); }
 .dict-row .tag { margin-left: auto; font-size: .6rem; color: var(--muted); white-space: nowrap; }
 .dict-row .badge { font-size: .6rem; color: var(--red); white-space: nowrap; }
+.dict-row.corrected { border-color: rgba(255, 209, 102, .55); }
+.dict-row .fix-btn {
+  flex: 0 0 auto; width: 28px; height: 28px; border-radius: 8px;
+  border: 1px solid var(--panel-line); background: transparent;
+  color: var(--muted); font-size: .85rem; cursor: pointer; display: grid; place-items: center;
+}
+.dict-row .fix-btn:hover { color: var(--ink); border-color: var(--gold); }
+.correction-box {
+  padding: 10px; margin-bottom: 10px;
+  background: var(--panel); border: 1px solid var(--gold);
+  border-radius: 12px;
+}
+.correction-box .search { margin-bottom: 4px; }
 
 /* ---------- Grammar ---------- */
 .tabs { display: flex; flex-wrap: wrap; gap: 4px; background: var(--panel); border: 1px solid var(--panel-line); border-radius: 12px; padding: 3px; margin-bottom: 12px; }

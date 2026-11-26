@@ -159,12 +159,17 @@
   }
 
   function allWords() {
-    var out = Data.WORDS.slice();
+    var fixes = Store.getCorrections();
+    function fix(w) {
+      var key = normLatin(w.latin || w.id);
+      return fixes[key] ? Object.assign({}, w, { dutch: fixes[key], corrected: true }) : w;
+    }
+    var out = Data.WORDS.map(fix);
     Store.getCustom().forEach(function (c) {
-      out.push({
+      out.push(fix({
         id: c.id, key: normLatin(c.latin), latin: c.latin, dutch: c.dutch,
         caput: c.caput || 99, pos: "zn.", custom: true
-      });
+      }));
     });
     return out;
   }
@@ -235,10 +240,16 @@
     var list = caputList(opts);
     var words = [];
     var seen = {};
+    var fixes = Store.getCorrections();
     function add(w, caput) {
       if (seen[w.id]) return;
       seen[w.id] = true;
-      words.push(Object.assign({}, w, { displayCaput: caput || w.caput }));
+      var key = normLatin(w.latin || w.id);
+      var fix = fixes[key];
+      words.push(Object.assign({}, w, {
+        dutch: fix || w.dutch, corrected: !!fix,
+        displayCaput: caput || w.caput
+      }));
     }
     if (!list) {
       Data.byBookCaput(book.id, "all").forEach(function (w) { add(w, book.assign(w)); });
