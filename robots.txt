@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yousefabujarad2014-beep.github.io/StudiumGo/sitemap.xml
