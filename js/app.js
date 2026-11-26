@@ -658,10 +658,54 @@
     $("dict-list").innerHTML = words.slice(0, 300).map(function (w) {
       var r = reviews[w.id];
       var badge = r && r.reps >= 3 && r.interval >= 7 ? '<span class="badge">beheerst</span>' : "";
-      return '<div class="dict-row"><span class="lat">' + displayLatin(w.latin) + '</span>' +
+      var key = normLatin(w.latin);
+      var label = (w.corrected ? "aangepast · " : "") +
+        (w.caput === 99 ? "eigen" : "caput " + Data.findBook(state.setup.book).assign(w));
+      return '<div class="dict-row' + (w.corrected ? " corrected" : "") + '"><span class="lat">' + displayLatin(w.latin) + '</span>' +
         '<span class="nl">' + w.dutch + '</span>' + badge +
-        '<span class="tag">' + (w.caput === 99 ? "eigen" : "caput " + Data.findBook(state.setup.book).assign(w)) + '</span></div>';
+        '<span class="tag">' + label + '</span>' +
+        '<button class="fix-btn" type="button" data-fix="' + key + '" title="Vertaling corrigeren" aria-label="Vertaling van ' + displayLatin(w.latin) + ' corrigeren">✎</button></div>';
     }).join("") || '<p class="muted">Geen woorden gevonden.</p>';
+  }
+
+  var activeCorrection = "";
+
+  function openCorrection(key) {
+    var found = allWords().filter(function (w) { return normLatin(w.latin) === key; })[0];
+    if (!found) return;
+    activeCorrection = key;
+    $("correction-latin").value = displayLatin(found.latin);
+    $("correction-dutch").value = found.dutch;
+    $("dict-correction").classList.remove("hidden");
+    $("correction-dutch").focus();
+    $("correction-dutch").select();
+    say("Corrigeer " + displayLatin(found.latin) + ".");
+  }
+
+  function closeCorrection() {
+    activeCorrection = "";
+    $("dict-correction").classList.add("hidden");
+  }
+
+  function saveCorrection() {
+    if (!activeCorrection) return;
+    var value = $("correction-dutch").value.trim();
+    if (!value) { toast("Vul een betekenis in. Met een leeg veld herstel je de standaard."); return; }
+    Store.setCorrection(activeCorrection, value);
+    closeCorrection();
+    renderDict();
+    renderSettings();
+    toast("Woord aangepast — geldt nu overal.");
+    say("Woord aangepast.");
+  }
+
+  function resetCorrection() {
+    if (!activeCorrection) return;
+    Store.setCorrection(activeCorrection, "");
+    closeCorrection();
+    renderDict();
+    renderSettings();
+    toast("Standaardvertaling hersteld.");
   }
 
   /* ---------------------------------------------------------------- */
@@ -921,9 +965,11 @@
   function renderSettings() {
     var s = Store.getSettings();
     var account = Accounts.current();
+    var fixes = Store.correctionCount();
     $("account-info").textContent = account
       ? "Ingelogd als " + account.name + " · " + Data.findYear(account.year || state.setup.year).label +
-        " · " + Data.findBook(state.setup.book).name + ". Je voortgang staat apart op dit apparaat."
+        " · " + Data.findBook(state.setup.book).name + ". Je voortgang staat apart op dit apparaat." +
+        (fixes ? " Je hebt " + fixes + " woord" + (fixes === 1 ? "" : "en") + " gecorrigeerd." : "")
       : "Account verplicht · maak eerst een profiel aan.";
     $("settings-years").innerHTML = yearButtonsHtml(state.setup.year);
     var del = $("btn-delete-account");
@@ -1046,7 +1092,7 @@
     bind("grammar-practice", function () { startSession("stems", { size: 10, minutes: 0 }); });
 
     bind("btn-quick-dict", function () { renderDict(); show("dict"); });
-    bind("dict-back", function () { show("home"); });
+    bind("dict-back", function () { closeCorrection(); show("home"); });
     bind("btn-quick-grammar", function () { renderGrammar(); show("grammar"); });
     bind("grammar-back", function () { show("home"); });
     bind("btn-quick-errors", function () { renderErrors(); show("errors"); });
@@ -1131,6 +1177,20 @@
     });
 
     $("dict-search").addEventListener("input", renderDict);
+
+    $("dict-list").addEventListener("click", function (e) {
+      var btn = e.target && e.target.closest ? e.target.closest("[data-fix]") : null;
+      if (!btn) return;
+      Audio.ensure(); Audio.play("click");
+      openCorrection(btn.getAttribute("data-fix"));
+    });
+
+    bind("correction-save", saveCorrection);
+    bind("correction-reset", resetCorrection);
+    bind("correction-cancel", closeCorrection);
+    $("correction-dutch").addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); saveCorrection(); }
+    });
 
     var gTabs = $("grammar-tabs").querySelectorAll("button");
     for (var g = 0; g < gTabs.length; g++) {
