@@ -393,11 +393,10 @@
   var WORDS = [];
   var seen = {};
   var ALL = RAW.concat(ADV);
-  var SKIPPED = [];
   for (var i = 0; i < ALL.length; i++) {
     var row = ALL[i];
     var key_normalized = normalize(row[0]);
-    if (seen[key_normalized]) { SKIPPED.push(row[0] + " (jaar " + row[4] + ")"); continue; }
+    if (seen[key_normalized]) continue;
     seen[key_normalized] = true;
     WORDS.push({
       id: key_normalized,
@@ -592,7 +591,6 @@
     CONJUGATIONS: CONJUGATIONS,
     CASES: CASES,
     normalize: normalize,
-    SKIPPED: SKIPPED,
     byCaput: function (n) {
       if (!n || n === "all") return WORDS.slice();
       return WORDS.filter(function (w) { return w.caput === Number(n); });
