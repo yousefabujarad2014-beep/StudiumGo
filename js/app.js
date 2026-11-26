@@ -824,6 +824,13 @@
     tips: {
       title: "Slim leren met StudiumGo",
       html: "<ul><li><strong>Gemengd oefenen</strong> dwingt je geheugen harder te werken dan één richting.</li><li><strong>Lengtetekens</strong> helpen je de klinker te zien; zet ze desnoods tijdelijk uit als je boek ze niet gebruikt.</li><li><strong>Spaced repetition</strong>: goede woorden komen later terug, foute woorden sneller. Vertrouw gerust op het systeem.</li><li><strong>Woordnummers</strong>: kies in de sessie-instellingen exact woord 1 t/m 20 als je les die avond maar een deel van het caput behandelt.</li><li><strong>Analyse</strong> laat zien welke capita al bijna af zijn — daar haal je het meeste rendement.</li></ul>"
+    },
+    bovenbouw: {
+      title: "4e tot 6de middelbaar: van woord naar tekst",
+      html: "<p>In de bovenbouw gaat het niet meer alleen om losse woorden. Je leest echte teksten en moet snel zien hoe een zin in elkaar zit.</p>" +
+        "<h3>Werk zo aan een Latijnse zin</h3><ol><li>Vind het <strong>gezegde</strong> en bepaal tijd, wijze, persoon en getal.</li><li>Zoek het <strong>onderwerp</strong> (nominatief) en het <strong>voorwerp</strong> (meestal accusatief).</li><li>Kijk daarna naar bijvoeglijke bepalingen, bijwoorden en bijzinnen.</li><li>Vertaal pas dan in goed Nederlands, met de juiste woordvolgorde.</li></ol>" +
+        "<h3>Per leerjaar</h3><ul><li><strong>4e:</strong> uitbreiding van de woordenschat, de eerste bijzinnen en voegwoorden.</li><li><strong>5e:</strong> abstracte begrippen, imperfectum, plusquamperfectum en passief.</li><li><strong>6de:</strong> AcI, ablativus absolutus, participia en gerundia — zie de tabbladen <em>Tijden &amp; wijzen</em> en <em>Syntaxis</em> in Grammatica.</li></ul>" +
+        "<p>Stel je leerjaar in bij je account of in de instellingen: je krijgt dan automatisch de woorden van dat jaar. Met het woordnummer-bereik oefen je precies de woorden van je les.</p>"
     }
   };
 
