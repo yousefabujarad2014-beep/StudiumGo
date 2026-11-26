@@ -199,14 +199,14 @@ body {
 .chip.active { background: linear-gradient(180deg, var(--green), var(--green-dark)); color: #06251a; border-color: transparent; }
 
 .segment {
-  display: flex; gap: 3px; padding: 3px;
+  display: flex; flex-wrap: wrap; gap: 3px; padding: 3px;
   background: var(--panel); border: 1px solid var(--panel-line);
   border-radius: 12px;
 }
 .segment button {
-  flex: 1; font-family: inherit; font-size: .76rem; font-weight: 700;
+  flex: 1 1 auto; min-width: 82px; font-family: inherit; font-size: .74rem; font-weight: 700;
   color: var(--muted); background: transparent; border: none;
-  border-radius: 9px; padding: 8px 3px; cursor: pointer;
+  border-radius: 9px; padding: 8px 4px; cursor: pointer;
 }
 .segment button:hover { color: var(--ink); }
 .segment button.active { background: linear-gradient(180deg, var(--green), var(--green-dark)); color: #06251a; }
