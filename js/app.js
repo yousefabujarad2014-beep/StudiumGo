@@ -661,7 +661,9 @@
     cases: "De vijf naamvallen: nominatief (onderwerp), genitief (bezit), datief (aan/voor), accusatief (voorwerp) en ablativus (door/met/uit).",
     declensions: "Een zelfstandig naamwoord krijgt een uitgang per naamval en per getal. Let op het geslacht: -us is meestal mannelijk, -um onzijdig, -a vrouwelijk.",
     conjugations: "De vervoeging bepaalt de infinitiefuitgang. Bij het perfectum valt vaak de stamverdubbeling of een veranderde klinker op.",
-    stems: "De vier stamtijden zijn: praesens, infinitief, perfectum en supinum. Bijna alle andere vormen zijn hieruit af te leiden."
+    stems: "De vier stamtijden zijn: praesens, infinitief, perfectum en supinum. Bijna alle andere vormen zijn hieruit af te leiden.",
+    tijden: "In de bovenbouw komen imperfectum, plusquamperfectum en de twee futura erbij. Het imperfectum beschrijft wat bezig was of gebruikelijk; het perfectum vertelt wat afgerond is.",
+    syntaxis: "Vanaf 4e middelbaar verschuift de nadruk van losse vormen naar zinsbouw: de accusativus cum infinitivo, ablativus absolutus, participia en bijzinnen."
   };
 
   function renderGrammar() {
