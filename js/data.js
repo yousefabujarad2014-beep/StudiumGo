@@ -196,6 +196,196 @@
     ["ēventus","gebeurtenis / uitkomst",12,"zn."],["fortūna","lot / geluk",12,"zn."],["fātum","lot / noodlot",12,"zn."]
   ];
 
+  // Geavanceerde woordenschat voor 4e, 5e en 6de middelbaar.
+  // [Latijn, Nederlands, caput, woordsoort, leerjaar]
+  var ADV = [
+    // ---- 4e middelbaar ----
+    // 1 — Familie & mensen
+    ["cōgnātus","bloedverwant",1,"zn.",4],["propinquus","nabestaande",1,"zn.",4],
+    ["hērēs","erfgenaam",1,"zn.",4],["vidua","weduwe",1,"zn.",4],
+    ["pupillus","weeskind / pleegkind",1,"zn.",4],["tūtēla","voogdij",1,"zn.",4],
+    ["adulter","overspelige",1,"zn.",4],["concubīna","bijvrouw",1,"zn.",4],
+    // 2 — Stad & land
+    ["prōvincia","provincie",2,"zn.",4],["mūnīcipium","stad met burgerrechten",2,"zn.",4],
+    ["colōnia","kolonie / nederzetting",2,"zn.",4],["portus","haven",2,"zn.",4],
+    ["moenia","stadsmuren",2,"zn.",4],["pōns","brug",2,"zn.",4],
+    ["fossa","gracht / loopgraaf",2,"zn.",4],["agger","wal / dijk",2,"zn.",4],
+    // 3 — Werkwoorden 1
+    ["occupō","ik bezet / houd bezig",3,"ww.",4],["sollicitō","ik maak ongerust / dring aan",3,"ww.",4],
+    ["īnstituō","ik stel in / richt op",3,"ww.",4],["cōnstituō","ik stel vast / besluit",3,"ww.",4],
+    ["perficiō","ik voltooi",3,"ww.",4],["suscipiō","ik onderneem / aanvaard",3,"ww.",4],
+    ["obtineō","ik verkrijg / houd",3,"ww.",4],["intermittō","ik onderbreek",3,"ww.",4],
+    // 4 — Werkwoorden 2
+    ["existimō","ik oordeel / schat",4,"ww.",4],["arbitror","ik meen / oordeel",4,"ww.",4],
+    ["suspicor","ik vermoed",4,"ww.",4],["opinor","ik ben van mening",4,"ww.",4],
+    ["meminī","ik herinner me",4,"ww.",4],["oblīvīscor","ik vergeet",4,"ww.",4],
+    ["polliceor","ik beloof",4,"ww.",4],["spondeō","ik zeg toe / garandeer",4,"ww.",4],
+    // 5 — Bijvoeglijk
+    ["ēgregius","voortreffelijk",5,"bn.",4],["praestāns","uitmuntend",5,"bn.",4],
+    ["īnsignis","opvallend / beroemd",5,"bn.",4],["nōbilis","adellijk / beroemd",5,"bn.",4],
+    ["sublimis","verheven / hoog",5,"bn.",4],["excelsus","hoog / uitstekend",5,"bn.",4],
+    ["ingēns","enorm",5,"bn.",4],["tenuis","dun / fijn",5,"bn.",4],
+    // 6 — Getallen & tijd
+    ["sextus","zesde",6,"telw.",4],["septimus","zevende",6,"telw.",4],
+    ["octāvus","achtste",6,"telw.",4],["nōnus","negende",6,"telw.",4],
+    ["decimus","tiende",6,"telw.",4],["vīcēsimus","twintigste",6,"telw.",4],
+    ["saeculum","eeuw",6,"zn.",4],["lūstrum","periode van vijf jaar",6,"zn.",4],
+    // 7 — School & studie
+    ["discīplina","leer / tucht / vakgebied",7,"zn.",4],["ērudītiō","geleerdheid",7,"zn.",4],
+    ["exercitātiō","oefening",7,"zn.",4],["meditātiō","overdenking",7,"zn.",4],
+    ["commentārius","aantekening / commentaar",7,"zn.",4],["codex","handschrift / boek",7,"zn.",4],
+    ["volūmen","boekrol / deel",7,"zn.",4],["bibliothēca","bibliotheek",7,"zn.",4],
+    // 8 — Oorlog & vrede
+    ["expeditiō","veldtocht",8,"zn.",4],["proelium","gevecht / slag",8,"zn.",4],
+    ["centuriō","centurion",8,"zn.",4],["sīgnifer","vaandrig",8,"zn.",4],
+    ["aquilifer","adelaarsdrager",8,"zn.",4],["veterānus","veteraan",8,"zn.",4],
+    ["tīrō","rekruut",8,"zn.",4],["praesidium","bezetting / bescherming",8,"zn.",4],
+    // 9 — Natuur & dieren
+    ["vītis","wijnstok",9,"zn.",4],["rādīx","wortel",9,"zn.",4],
+    ["rāmus","tak",9,"zn.",4],["folium","blad",9,"zn.",4],
+    ["germen","kiem / spruit",9,"zn.",4],["bacca","bes",9,"zn.",4],
+    ["seges","staand koren / oogst",9,"zn.",4],["spīca","aar",9,"zn.",4],
+    // 10 — Eten & drinken
+    ["esca","voedsel",10,"zn.",4],["alimentum","voedsel / onderhoud",10,"zn.",4],
+    ["epulae","feestmaaltijd",10,"zn.",4],["convīvium","gastmaal",10,"zn.",4],
+    ["cēna","avondmaaltijd",10,"zn.",4],["prandium","middagmaal",10,"zn.",4],
+    ["potiō","drank",10,"zn.",4],["trīticum","tarwe",10,"zn.",4],
+    // 11 — Gevoel & gedachte
+    ["metus","vrees",11,"zn.",4],["terror","schrik / terreur",11,"zn.",4],
+    ["anxietās","bezorgdheid",11,"zn.",4],["sollicitūdō","ongerustheid",11,"zn.",4],
+    ["laetitia","vreugde",11,"zn.",4],["maeror","droefheid / verdriet",11,"zn.",4],
+    ["alacritās","vrolijkheid / ijver",11,"zn.",4],["tranquillitās","rust / kalmte",11,"zn.",4],
+    // 12 — Abstracte begrippen
+    ["effectus","gevolg / uitvoering",12,"zn.",4],["consequentia","gevolg / samenhang",12,"zn.",4],
+    ["prīncipium","beginsel / begin",12,"zn.",4],["elementum","element / beginsel",12,"zn.",4],
+    ["accidens","toeval / eigenschap",12,"zn.",4],["proprietās","eigenaardigheid",12,"zn.",4],
+    ["relātiō","betrekking / verhouding",12,"zn.",4],["oppositiō","tegenstelling",12,"zn.",4],
+
+    // ---- 5de middelbaar ----
+    // 1 — Familie & mensen
+    ["sodālitās","kameradenkring / vereniging",1,"zn.",5],["necessitūdō","vriendschap / verwantschap",1,"zn.",5],
+    ["affīnitās","verwantschap door huwelijk",1,"zn.",5],["nurus","schoondochter",1,"zn.",5],
+    ["gener","schoonzoon",1,"zn.",5],["socer","schoonvader",1,"zn.",5],
+    ["socrus","schoonmoeder",1,"zn.",5],["patrōnus","beschermheer / werkgever",1,"zn.",5],
+    // 2 — Stad & land
+    ["senātus","senaat",2,"zn.",5],["comitium","volksvergadering",2,"zn.",5],
+    ["rōstra","sprekerstribune",2,"zn.",5],["mūnītiō","versterking",2,"zn.",5],
+    ["iter","reis / tocht",2,"zn.",5],["regiō","streek / gebied",2,"zn.",5],
+    ["terminus","grens / eindpunt",2,"zn.",5],["compitum","kruispunt",2,"zn.",5],
+    // 3 — Werkwoorden 1
+    ["adipīscor","ik verkrijg / bereik",3,"ww.",5],["cōnsequor","ik volg / bereik",3,"ww.",5],
+    ["dēsinō","ik houd op",3,"ww.",5],["recūsō","ik weiger",3,"ww.",5],
+    ["dēprecōr","ik smeek / vraag dringend",3,"ww.",5],["implōrō","ik smeek hulp af",3,"ww.",5],
+    ["obsecrō","ik smeek / bezweer",3,"ww.",5],["renuō","ik weiger",3,"ww.",5],
+    // 4 — Werkwoorden 2
+    ["cōnfīdō","ik vertrouw",4,"ww.",5],["diffīdō","ik wantrouw / twijfel",4,"ww.",5],
+    ["dēspērō","ik wanhoop",4,"ww.",5],["paenitet","het berouwt me",4,"ww.",5],
+    ["pudet","ik schaam me",4,"ww.",5],["piget","het spijt / verveelt me",4,"ww.",5],
+    ["taedet","ik ben het beu",4,"ww.",5],["libet","het behaagt me",4,"ww.",5],
+    // 5 — Bijvoeglijk
+    ["eximius","buitengewoon",5,"bn.",5],["ignōbilis","onbekend / laaggeboren",5,"bn.",5],
+    ["vāstus","uitgestrekt / woest",5,"bn.",5],["immēnsus","onmetelijk",5,"bn.",5],
+    ["crassus","dik / grof",5,"bn.",5],["solidus","stevig / massief",5,"bn.",5],
+    ["fragilis","breekbaar",5,"bn.",5],["stabilis","stabiel / standvastig",5,"bn.",5],
+    // 6 — Getallen & tijd
+    ["centēsimus","honderdste",6,"telw.",5],["mīllēsimus","duizendste",6,"telw.",5],
+    ["dīluculum","dageraad",6,"zn.",5],["aurōra","morgenrood",6,"zn.",5],
+    ["mātūtīnus","ochtend-",6,"bn.",5],["pōmerīdiānus","namiddag-",6,"bn.",5],
+    ["antemerīdiānus","voor de middag",6,"bn.",5],["quotīdiē","dagelijks",6,"bw.",5],
+    // 7 — School & studie
+    ["ērudītus","geleerd / opgevoed",7,"bn.",5],["doctus","geleerd / onderwezen",7,"bn.",5],
+    ["indoctus","ongeleerd",7,"bn.",5],["studiōsus","ijverig / student",7,"bn.",5],
+    ["litterātus","geletterd",7,"bn.",5],["illūstris","helder / beroemd",7,"bn.",5],
+    ["probātiō","bewijs / proef",7,"zn.",5],["praemium","beloning / prijs",7,"zn.",5],
+    // 8 — Oorlog & vrede
+    ["incursiō","aanval / inval",8,"zn.",5],["excursiō","uitval",8,"zn.",5],
+    ["dēditiō","overgave",8,"zn.",5],["indūtiae","wapenstilstand",8,"zn.",5],
+    ["pactum","verdrag / afspraak",8,"zn.",5],["subsidium","hulp / reserve",8,"zn.",5],
+    ["commeātus","verlof / bevoorrading",8,"zn.",5],["stīpendium","soldij / tribuut",8,"zn.",5],
+    // 9 — Natuur & dieren
+    ["frutex","struik",9,"zn.",5],["herba","kruid / gras",9,"zn.",5],
+    ["nemus","bos / heilig bos",9,"zn.",5],["saltus","woudweide",9,"zn.",5],
+    ["palūs","moeras",9,"zn.",5],["torrēns","bergstroom",9,"zn.",5],
+    ["fretum","zeestraat",9,"zn.",5],["ōceanus","oceaan",9,"zn.",5],
+    // 10 — Eten & drinken
+    ["nūtrīmentum","voeding",10,"zn.",5],["victus","levensonderhoud",10,"zn.",5],
+    ["ientāculum","ontbijt",10,"zn.",5],["garum","vissaus",10,"zn.",5],
+    ["acetum","azijn",10,"zn.",5],["piper","peper",10,"zn.",5],
+    ["sapa","ingekookte druivensap",10,"zn.",5],["placenta","koek / gebak",10,"zn.",5],
+    // 11 — Gevoel & gedachte
+    ["ōdium","haat",11,"zn.",5],["invidentia","afgunst",11,"zn.",5],
+    ["aemulātiō","jaloezie / navolging",11,"zn.",5],["suspīciō","verdenking / vermoeden",11,"zn.",5],
+    ["fidūcia","vertrouwen",11,"zn.",5],["pavor","schrik / angst",11,"zn.",5],
+    ["horror","huivering / afschuw",11,"zn.",5],["īrācundia","woede / opvliegendheid",11,"zn.",5],
+    // 12 — Abstracte begrippen
+    ["similitūdō","gelijkenis",12,"zn.",5],["dissimilitūdō","ongelijkenis",12,"zn.",5],
+    ["identitās","identiteit",12,"zn.",5],["diversitās","verscheidenheid",12,"zn.",5],
+    ["unitās","eenheid",12,"zn.",5],["multitūdō","menigte / veelheid",12,"zn.",5],
+    ["universum","heelal",12,"zn.",5],["mundus","wereld",12,"zn.",5],
+
+    // ---- 6de middelbaar ----
+    // 1 — Familie & mensen
+    ["cōgnātiō","verwantschap",1,"zn.",6],["necessārius","nabestaande / noodzakelijk",1,"zn.",6],
+    ["tūtor","voogd",1,"zn.",6],["cūrātor","beheerder / curator",1,"zn.",6],
+    ["lībertus","vrijgelatene",1,"zn.",6],["līberta","vrijgelatene (vrouw)",1,"zn.",6],
+    ["patricius","patriciër",1,"zn.",6],["plēbēius","plebejer",1,"zn.",6],
+    // 2 — Stad & land
+    ["mūniceps","burger / raadslid",2,"zn.",6],["incola","bewoner",2,"zn.",6],
+    ["habitātor","bewoner",2,"zn.",6],["peregrīnus","vreemdeling",2,"zn.",6],
+    ["advena","nieuwkomer",2,"zn.",6],["domicilium","woonplaats",2,"zn.",6],
+    ["sēdēs","zetel / woonplaats",2,"zn.",6],["fīnitimus","buur / aangrenzend",2,"zn.",6],
+    // 3 — Werkwoorden 1
+    ["dēliberō","ik overleg / beraad me",3,"ww.",6],["statuō","ik besluit / stel vast",3,"ww.",6],
+    ["dēcernō","ik besluit / bepaal",3,"ww.",6],["mandō","ik draag op / geef last",3,"ww.",6],
+    ["permittō","ik sta toe",3,"ww.",6],["vetō","ik verbied",3,"ww.",6],
+    ["iubeō","ik beveel",3,"ww.",6],["ōrō","ik bid / smeek",3,"ww.",6],
+    // 4 — Werkwoorden 2
+    ["oportet","het betaamt / moet",4,"ww.",6],["licet","het is toegestaan",4,"ww.",6],
+    ["decet","het past / betaamt",4,"ww.",6],["expedit","het is voordelig",4,"ww.",6],
+    ["iuvat","het verheugt / helpt",4,"ww.",6],["fallit","het ontgaat / bedriegt",4,"ww.",6],
+    ["latet","het is verborgen",4,"ww.",6],["patet","het staat open / blijkt",4,"ww.",6],
+    // 5 — Bijvoeglijk
+    ["aequus","gelijk / billijk",5,"bn.",6],["inīquus","onbillijk",5,"bn.",6],
+    ["integer","ongeschonden / rechtschapen",5,"bn.",6],["incorruptus","onbedorven",5,"bn.",6],
+    ["sincērus","oprecht / zuiver",5,"bn.",6],["candidus","helder / openhartig",5,"bn.",6],
+    ["callidus","sluw / handig",5,"bn.",6],["astūtus","listig / sluw",5,"bn.",6],
+    // 6 — Getallen & tijd
+    ["aeternus","eeuwig",6,"bn.",6],["temporārius","tijdelijk",6,"bn.",6],
+    ["perpetuus","voortdurend / levenslang",6,"bn.",6],["diūturnus","langdurig",6,"bn.",6],
+    ["brevitās","kortheid / bondigheid",6,"zn.",6],["diūturnitās","langdurigheid",6,"zn.",6],
+    ["aeternitās","eeuwigheid",6,"zn.",6],["occāsiō","gelegenheid",6,"zn.",6],
+    // 7 — School & studie
+    ["rhētor","redenaar / leraar welsprekendheid",7,"zn.",6],["philosophus","filosoof",7,"zn.",6],
+    ["sophista","sofist / geleerde",7,"zn.",6],["acadēmia","academie / school",7,"zn.",6],
+    ["gymnasium","gymnasium / sportschool",7,"zn.",6],["lycēum","lyceum / school",7,"zn.",6],
+    ["scholasticus","schoolmeester / leerling",7,"zn.",6],["dēclāmātiō","oefenrede / declamatie",7,"zn.",6],
+    // 8 — Oorlog & vrede
+    ["stratagēma","listig krijgsplan",8,"zn.",6],["circumvallātiō","omsingeling met wallen",8,"zn.",6],
+    ["āmissiō","verlies",8,"zn.",6],["ruīna","instorting / ondergang",8,"zn.",6],
+    ["excidiō","verwoesting / ondergang",8,"zn.",6],["dīreptiō","plundering",8,"zn.",6],
+    ["captīvitās","gevangenschap",8,"zn.",6],["līberātiō","bevrijding",8,"zn.",6],
+    // 9 — Natuur & dieren
+    ["formīca","mier",9,"zn.",6],["vespa","wesp",9,"zn.",6],
+    ["musca","vlieg",9,"zn.",6],["anguis","slang",9,"zn.",6],
+    ["serpēns","kruipend dier / slang",9,"zn.",6],["rāna","kikker",9,"zn.",6],
+    ["dēlphīnus","dolfijn",9,"zn.",6],["balaena","walvis",9,"zn.",6],
+    // 10 — Eten & drinken
+    ["hordeum","gerst",10,"zn.",6],["faba","boon",10,"zn.",6],
+    ["ōvum","ei",10,"zn.",6],["dulcia","zoetigheid / nagerecht",10,"zn.",6],
+    ["sitis","dorst",10,"zn.",6],["famēs","honger",10,"zn.",6],
+    ["gustus","smaak / proef",10,"zn.",6],["odor","geur",10,"zn.",6],
+    // 11 — Gevoel & gedachte
+    ["superbia","trots / hoogmoed",11,"zn.",6],["arrogantia","aanmatiging",11,"zn.",6],
+    ["humilitās","nederigheid",11,"zn.",6],["modestia","bescheidenheid",11,"zn.",6],
+    ["temperantia","matigheid",11,"zn.",6],["continentia","zelfbeheersing",11,"zn.",6],
+    ["luxuria","weelde / losbandigheid",11,"zn.",6],["avaritia","hebzucht",11,"zn.",6],
+    // 12 — Abstracte begrippen
+    ["iūstitia","gerechtigheid",12,"zn.",6],["aequitās","billijkheid",12,"zn.",6],
+    ["inīquitās","onbillijkheid",12,"zn.",6],["meritum","verdienste",12,"zn.",6],
+    ["culpa","schuld / fout",12,"zn.",6],["innocentia","onschuld",12,"zn.",6],
+    ["iūdicium","oordeel / rechtszaak",12,"zn.",6],["dignitās","waardigheid / aanzien",12,"zn.",6]
+  ];
+
   function normalize(value) {
     return String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
   }
