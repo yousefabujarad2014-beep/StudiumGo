@@ -488,7 +488,7 @@
 
   // Lesboeken: zelfde structuur als verbum (boek → caput → woorden),
   // maar met vrije, eigen woordindeling — geen officiële boeklijsten.
-  // Per leerjaar hoort een eigen boek: Pegasus Novus 1, 2 of 3.
+  // Per leerjaar hoort een eigen boek: Pegasus Novus 1 t/m 6.
   var YEARS = [
     { n: 1, label: "1e middelbaar", short: "1e" },
     { n: 2, label: "2de middelbaar", short: "2de" },
