@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>StudiumGo — Latijn leren, elke dag een beetje</title>
+  <meta name="description" content="StudiumGo is een gratis, offline Latijnse woordjes-app. Oefen flashcards per caput, met slimme herhaling, stamtijden, grammatica en voortgangsstatistieken." />
+  <meta name="theme-color" content="#1a1630" />
+  <meta name="color-scheme" content="dark light" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="assets/icons/studium.svg" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="StudiumGo" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <noscript><p class="noscript">StudiumGo werkt alleen met JavaScript ingeschakeld.</p></noscript>
+  <div class="app">
+    <header class="top">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span class="brand-text">StudiumGo<small>Latijn leren, elke dag</small></span>
+      </div>
+      <div class="top-actions">
+        <button id="btn-user" class="icon-btn" type="button" title="Account / profiel" aria-label="Account">👤</button>
+        <button id="btn-install" class="icon-btn hidden" type="button" title="Installeer StudiumGo als app" aria-label="Installeer app">⬇️</button>
+        <button id="btn-theme" class="icon-btn" type="button" title="Donker / licht thema" aria-label="Thema wisselen">🌙</button>
+        <button id="btn-mute" class="icon-btn" type="button" title="Geluid aan of uit" aria-label="Geluid aan of uit">🔊</button>
+      </div>
+    </header>
+
+    <!-- ==================== ACCOUNT ==================== -->
+    <section class="screen" id="screen-account">
+      <div class="panel wide account-card">
+        <h2>StudiumGo-account</h2>
+        <p class="muted">Een account is verplicht. Je voortgang wordt op dit apparaat bewaard — maak een profiel aan of log in.</p>
+        <div class="tabs" id="account-tabs">
+          <button type="button" data-account-tab="login" class="active">Inloggen</button>
+          <button type="button" data-account-tab="register">Account maken</button>
+        </div>
+        <div id="account-year-wrap" class="hidden">
+          <label class="field-label" for="account-year">In welk leerjaar zit je?</label>
+          <div class="segment" id="account-year">
+            <button type="button" data-year="1">1e middelbaar</button>
+            <button type="button" data-year="2">2de middelbaar</button>
+            <button type="button" data-year="3">3de middelbaar</button>
+          </div>
+          <p class="muted" id="account-book">Boek: Pegasus Novus 1</p>
+        </div>
+        <div id="account-existing"></div>
+        <label class="field-label" for="account-name">Gebruikersnaam</label>
+        <input class="search" id="account-name" type="text" autocomplete="username" aria-label="Gebruikersnaam" />
+        <label class="field-label" for="account-password">Wachtwoord</label>
+        <input class="search" id="account-password" type="password" autocomplete="current-password" aria-label="Wachtwoord" />
+        <p class="form-error" id="account-error" aria-live="polite"></p>
+        <div class="panel-actions">
+          <button class="btn primary" id="account-submit" type="button">Inloggen</button>
+        </div>
+        <p class="hint-small">Lokale profielen — geen online account, geen e-mailadres, niets in de cloud.</p>
+      </div>
+    </section>
+
+    <!-- ==================== HOME ==================== -->
+    <section class="screen" id="screen-home">
+      <div class="hero">
+        <p class="hero-kicker">DAILY DOSE OF LATIN</p>
+        <h1>Disce cotidie.</h1>
+        <p class="hero-sub">Leer elke dag een beetje Latijn. Kort, slim en helemaal gratis.</p>
+        <button class="btn primary big" id="btn-go-setup" type="button">▶ Start een sessie</button>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card"><span class="stat-ico">🔥</span><span class="stat-value" id="stat-streak">0</span><span class="stat-label">dagen op rij</span></div>
+        <div class="stat-card"><span class="stat-ico">🏛️</span><span class="stat-value" id="stat-mastered">0</span><span class="stat-label">woorden beheerst</span></div>
+        <div class="stat-card"><span class="stat-ico">🎯</span><span class="stat-value" id="stat-accuracy">0%</span><span class="stat-label">goed geteld</span></div>
+        <div class="stat-card"><span class="stat-ico">📚</span><span class="stat-value" id="stat-sessions">0</span><span class="stat-label">sessies</span></div>
+      </div>
+
+      <div class="daily-goal">
+        <div class="goal-top"><strong>Dagelijks doel</strong><span id="goal-text">0 / 10 woorden</span></div>
+        <div class="goal-bar"><div class="goal-fill" id="goal-fill"></div></div>
+      </div>
+
+      <div class="quick-grid">
+        <button class="quick" id="btn-quick-stems" type="button"><span>⚔️</span><strong>Stamtijden</strong><small>verba principalia</small></button>
+        <button class="quick" id="btn-quick-dict" type="button"><span>🔎</span><strong>Woordenboek</strong><small>448 woorden</small></button>
+        <button class="quick" id="btn-quick-grammar" type="button"><span>📜</span><strong>Grammatica</strong><small>naamvallen & tijden</small></button>
+        <button class="quick" id="btn-quick-errors" type="button"><span>📕</span><strong>Mijn fouten</strong><small>gericht herhalen</small></button>
+        <button class="quick" id="btn-quick-ach" type="button"><span>🏅</span><strong>Prestaties</strong><small>mijlpalen</small></button>
+        <button class="quick" id="btn-quick-settings" type="button"><span>⚙️</span><strong>Instellingen</strong><small>woorden & data</small></button>
+        <button class="quick" id="btn-quick-analysis" type="button"><span>📊</span><strong>Analyse</strong><small>voortgang per caput</small></button>
+        <button class="quick" id="btn-quick-leaderboard" type="button"><span>🏆</span><strong>Ranglijst</strong><small>lokale profielen</small></button>
+        <button class="quick" id="btn-quick-guide" type="button"><span>🧭</span><strong>Studiegids</strong><small>Latijn leren & toets</small></button>
+      </div>
+
+      <div class="panel capitula-panel">
+        <div class="panel-head"><h2>Lesboek</h2><span id="method-note">Pegasus Novus</span></div>
+        <h3>Leerjaar</h3>
+        <div class="segment" id="home-years"></div>
+        <h3>Capitula</h3>
+        <div class="caput-grid" id="home-capits"></div>
+        <p class="hint-small">Pegasus Novus · leerjaar → caput → woordnummer. De woordindeling is eigen en vrij.</p>
+      </div>
+    </section>
+
+    <!-- ==================== SETUP ==================== -->
+    <section class="screen" id="screen-setup">
+      <div class="panel wide">
+        <h2>Sessie instellen</h2>
+        <p class="muted">Stel je oefening samen zoals jij wilt.</p>
+
+        <h3>Leerjaar</h3>
+        <div class="segment" id="setup-years"></div>
+
+        <h3>Caput</h3>
+        <div class="chip-wrap" id="setup-capits"></div>
+
+        <h3>Caput-bereik (of kies één caput hierboven)</h3>
+        <div class="range-row">
+          <label>Van <select id="range-from" aria-label="Van caput"></select></label>
+          <label>Tot <select id="range-to" aria-label="Tot caput"></select></label>
+          <button class="btn" id="btn-range" type="button">Toepassen</button>
+        </div>
+
+        <h3>Woordnummer (optioneel)</h3>
+        <div class="range-row">
+          <label>Van <input id="word-from" type="number" min="1" max="99" placeholder="1" aria-label="Van woordnummer" /></label>
+          <label>Tot <input id="word-to" type="number" min="1" max="99" placeholder="alles" aria-label="Tot woordnummer" /></label>
+          <button class="btn" id="btn-words" type="button">Toepassen</button>
+        </div>
+
+        <h3>Richting</h3>
+        <div class="segment" id="setup-direction">
+          <button type="button" data-direction="lat-nl">Latijn → NL</button>
+          <button type="button" data-direction="nl-lat">NL → Latijn</button>
+          <button type="button" data-direction="both">Gemengd</button>
+        </div>
+
+        <h3>Aantal woorden</h3>
+        <div class="segment" id="setup-size">
+          <button type="button" data-size="10">10</button>
+          <button type="button" data-size="15">15</button>
+          <button type="button" data-size="25">25</button>
+          <button type="button" data-size="40">40</button>
+        </div>
+
+        <h3>Tijdlimiet</h3>
+        <div class="segment" id="setup-minutes">
+          <button type="button" data-minutes="5">5 min</button>
+          <button type="button" data-minutes="10">10 min</button>
+          <button type="button" data-minutes="15">15 min</button>
+          <button type="button" data-minutes="0">Geen</button>
+        </div>
+
+        <label class="switch-row">
+          <input type="checkbox" id="setup-weak" />
+          <span class="switch"></span>
+          <span><strong>Alleen lastige & vervallen woorden</strong><small>Focus op wat je nog niet goed kent</small></span>
+        </label>
+
+        <div class="panel-actions">
+          <button class="btn ghost" id="setup-back" type="button">← Terug</button>
+          <button class="btn primary" id="btn-start" type="button">▶ Oefenen</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SESSION ==================== -->
+    <section class="screen" id="screen-session">
+      <div class="session-top">
+        <div class="progress"><div class="progress-fill" id="sess-progress"></div></div>
+        <div class="session-meta">
+          <span id="sess-count">1 / 15</span>
+          <span id="sess-score">0 punten</span>
+          <span id="sess-time">5:00</span>
+          <button class="mini-btn" id="sess-stop" type="button" title="Stoppen">⏹</button>
+        </div>
+      </div>
+
+      <div class="card" id="flashcard">
+        <span class="card-label" id="sess-label">Latijn → Nederlands</span>
+        <div class="card-prompt" id="sess-prompt">—</div>
+        <div class="card-meta" id="sess-meta"></div>
+        <div class="card-input-wrap">
+          <input id="sess-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Typ je antwoord…" aria-label="Je antwoord" />
+          <button class="mini-btn" id="sess-hint-btn" type="button" title="Hint">💡</button>
+        </div>
+        <p class="hint-line" id="sess-hint"></p>
+        <p class="feedback" id="sess-feedback" aria-live="polite"></p>
+        <div class="card-actions">
+          <button class="btn ghost" id="sess-skip" type="button">Overslaan</button>
+          <button class="btn primary" id="sess-check" type="button">Controleer ↵</button>
+        </div>
+      </div>
+      <p class="tip">Tip: je mag ook zonder lengtetekens typen. Hoofdletters maken niet uit.</p>
+    </section>
+
+    <!-- ==================== SUMMARY ==================== -->
+    <section class="screen" id="screen-summary">
+      <div class="panel wide">
+        <h2 id="summary-title">Sessie afgerond!</h2>
+        <p class="summary-sub" id="summary-sub">Mooi werk.</p>
+        <div class="result-grid">
+          <div><span id="summary-score">0</span><small>punten</small></div>
+          <div><span id="summary-accuracy">0%</span><small>goed</small></div>
+          <div><span id="summary-words">0</span><small>woorden</small></div>
+          <div><span id="summary-time">0:00</span><small>tijd</small></div>
+        </div>
+        <div class="summary-streak" id="summary-streak"></div>
+        <div id="summary-achievements" class="ach-list"></div>
+        <div class="panel-actions">
+          <button class="btn ghost" id="summary-errors" type="button">📕 Mijn fouten</button>
+          <button class="btn" id="summary-home" type="button">🏠 Home</button>
+          <button class="btn primary" id="summary-again" type="button">🔁 Nog een ronde</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== DICTIONARY ==================== -->
+    <section class="screen" id="screen-dict">
+      <div class="panel wide">
+        <h2>Woordenboek</h2>
+        <input class="search" id="dict-search" type="search" placeholder="Zoek Latijn of Nederlands…" aria-label="Zoek woorden" />
+        <p class="muted" id="dict-count"></p>
+        <div class="dict-list" id="dict-list"></div>
+        <div class="panel-actions"><button class="btn ghost" id="dict-back" type="button">← Terug</button></div>
+      </div>
+    </section>
+
+    <!-- ==================== GRAMMAR ==================== -->
+    <section class="screen" id="screen-grammar">
+      <div class="panel wide">
+        <h2>Grammatica</h2>
+        <div class="tabs" id="grammar-tabs">
+          <button type="button" data-grammar="cases" class="active">Naamvallen</button>
+          <button type="button" data-grammar="declensions">Verbuigingen</button>
+          <button type="button" data-grammar="conjugations">Vervoegingen</button>
+          <button type="button" data-grammar="stems">Stamtijden</button>
+        </div>
+        <div id="grammar-content"></div>
+        <div class="panel-actions">
+          <button class="btn primary" id="grammar-practice" type="button">⚔️ Oefen stamtijden</button>
+          <button class="btn ghost" id="grammar-back" type="button">← Terug</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ERRORS ==================== -->
+    <section class="screen" id="screen-errors">
+      <div class="panel wide">
+        <h2>Mijn fouten</h2>
+        <p class="muted" id="errors-intro">Woorden die je vaker fout had, staan hier.</p>
+        <div class="dict-list" id="errors-list"></div>
+        <div class="panel-actions">
+          <button class="btn" id="errors-print" type="button">🖨️ PDF / print</button>
+          <button class="btn" id="errors-csv" type="button">📄 CSV</button>
+          <button class="btn ghost" id="errors-clear" type="button">Wissen</button>
+          <button class="btn ghost" id="errors-back" type="button">← Terug</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ACHIEVEMENTS ==================== -->
+    <section class="screen" id="screen-ach">
+      <div class="panel wide">
+        <h2>Prestaties</h2>
+        <p class="muted" id="ach-count"></p>
+        <div class="ach-grid" id="ach-list"></div>
+        <div class="panel-actions"><button class="btn ghost" id="ach-back" type="button">← Terug</button></div>
+      </div>
+    </section>
+
+    <!-- ==================== ANALYSE ==================== -->
+    <section class="screen" id="screen-analysis">
+      <div class="panel wide">
+        <h2>Voortgangsanalyse</h2>
+        <p class="muted" id="analysis-sub">Zie precies welke capita je beheerst en waar je nog aan wilt werken.</p>
+        <div id="analysis-content"></div>
+        <div class="panel-actions"><button class="btn ghost" id="analysis-back" type="button">← Terug</button></div>
+      </div>
+    </section>
+
+    <!-- ==================== RANGLIJST ==================== -->
+    <section class="screen" id="screen-leaderboard">
+      <div class="panel wide">
+        <h2>Ranglijst</h2>
+        <p class="muted">Lokale profielen op dit apparaat — wie studeert het meest?</p>
+        <div id="leaderboard-list" class="ach-list"></div>
+        <div class="panel-actions"><button class="btn ghost" id="leaderboard-back" type="button">← Terug</button></div>
+      </div>
+    </section>
+
+    <!-- ==================== STUDIEGIDS ==================== -->
+    <section class="screen" id="screen-guide">
+      <div class="panel wide">
+        <h2>Studiegids</h2>
+        <div class="tabs" id="guide-tabs">
+          <button type="button" data-guide="basis" class="active">Latijn leren</button>
+          <button type="button" data-guide="toets">Toetsdag</button>
+          <button type="button" data-guide="stamtijden">Stamtijden</button>
+          <button type="button" data-guide="tips">Slim leren</button>
+        </div>
+        <div id="guide-content"></div>
+        <div class="panel-actions"><button class="btn ghost" id="guide-back" type="button">← Terug</button></div>
+      </div>
+    </section>
+
+    <!-- ==================== SETTINGS ==================== -->
+    <section class="screen" id="screen-settings">
+      <div class="panel wide">
+        <h2>Instellingen</h2>
+
+        <h3>Account</h3>
+        <p class="muted" id="account-info">Account op dit apparaat.</p>
+        <label class="field-label">Leerjaar wijzigen</label>
+        <div class="segment" id="settings-years"></div>
+        <div class="data-actions">
+          <button class="btn" id="btn-switch-account" type="button">🔄 Account wisselen</button>
+          <button class="btn ghost danger" id="btn-delete-account" type="button">🗑️ Account verwijderen</button>
+        </div>
+
+        <h3>Weergave</h3>
+        <label class="switch-row">
+          <input type="checkbox" id="set-macrons" /><span class="switch"></span>
+          <span><strong>Lengtetekens tonen</strong><small>ā, ē, ī, ō, ū in het Latijn</small></span>
+        </label>
+        <label class="switch-row">
+          <input type="checkbox" id="set-sound" /><span class="switch"></span>
+          <span><strong>Geluid</strong><small>Kleine geluiden bij goed/fout</small></span>
+        </label>
+
+        <h3>Eigen woorden toevoegen</h3>
+        <div class="custom-form">
+          <input id="custom-latin" type="text" placeholder="Latijn (bijv. ingressus)" aria-label="Latijns woord" />
+          <input id="custom-dutch" type="text" placeholder="Nederlands (bijv. ingang)" aria-label="Nederlandse betekenis" />
+          <button class="btn" id="custom-add" type="button">Toevoegen</button>
+        </div>
+        <div id="custom-list" class="custom-list"></div>
+
+        <h3>Je gegevens</h3>
+        <div class="data-actions">
+          <button class="btn" id="data-export" type="button">⬇️ Exporteer JSON</button>
+          <label class="btn file-btn">⬆️ Importeer JSON<input id="data-import" type="file" accept="application/json,.json" /></label>
+          <button class="btn ghost danger" id="data-reset" type="button">🗑️ Alles wissen</button>
+        </div>
+
+        <div class="panel-actions"><button class="btn ghost" id="settings-back" type="button">← Terug</button></div>
+      </div>
+    </section>
+
+    <footer class="foot">StudiumGo · <em>Disce cotidie.</em> · gratis & offline</footer>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="print-sheet" id="print-sheet"></div>
+  <p class="sr-only" id="live" aria-live="polite" aria-atomic="true"></p>
+
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/accounts.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator && location.protocol.indexOf("http") === 0) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("sw.js").catch(function () {});
+      });
+    }
+  </script>
+</body>
+</html>

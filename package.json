@@ -1,0 +1,9 @@
+{
+  "name": "studiumgo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Gratis, offline Latijnse woordjes-app met flashcards, stamtijden en grammatica.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
