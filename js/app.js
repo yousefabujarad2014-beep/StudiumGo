@@ -699,7 +699,7 @@
           '<tr><td>Perfectum</td>' + c.perfect.map(function (v) { return '<td>' + displayLatin(v) + '</td>'; }).join("") + '</tr>' +
           '</tbody></table></div>';
       });
-    } else {
+    } else if (kind === "stems") {
       html += '<div class="table-wrap"><table><thead><tr><th>Praesens</th><th>Infinitief</th><th>Perfectum</th><th>Supinum</th><th>Nederlands</th></tr></thead><tbody>';
       D.STEMS.forEach(function (s) {
         html += '<tr><td>' + displayLatin(s.present) + '</td><td>' + displayLatin(s.infinitive) + '</td><td>' +
