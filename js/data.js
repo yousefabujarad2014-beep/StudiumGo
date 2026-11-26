@@ -241,19 +241,19 @@
     ["aquilifer","adelaarsdrager",8,"zn.",4],["veterānus","veteraan",8,"zn.",4],
     ["tīrō","rekruut",8,"zn.",4],["praesidium","bezetting / bescherming",8,"zn.",4],
     // 9 — Natuur & dieren
-    ["vītis","wijnstok",9,"zn.",4],["rādīx","wortel",9,"zn.",4],
-    ["rāmus","tak",9,"zn.",4],["folium","blad",9,"zn.",4],
+    ["vītis","wijnstok",9,"zn.",4],["caulis","steel / stengel",9,"zn.",4],
+    ["surculus","scheut / lot",9,"zn.",4],["frons","blad / loof",9,"zn.",4],
     ["germen","kiem / spruit",9,"zn.",4],["bacca","bes",9,"zn.",4],
     ["seges","staand koren / oogst",9,"zn.",4],["spīca","aar",9,"zn.",4],
     // 10 — Eten & drinken
     ["esca","voedsel",10,"zn.",4],["alimentum","voedsel / onderhoud",10,"zn.",4],
-    ["epulae","feestmaaltijd",10,"zn.",4],["convīvium","gastmaal",10,"zn.",4],
-    ["cēna","avondmaaltijd",10,"zn.",4],["prandium","middagmaal",10,"zn.",4],
+    ["epulae","feestmaaltijd",10,"zn.",4],["epulum","feestmaal",10,"zn.",4],
+    ["triclīnium","eetkamer",10,"zn.",4],["merenda","tussenmaaltijd",10,"zn.",4],
     ["potiō","drank",10,"zn.",4],["trīticum","tarwe",10,"zn.",4],
     // 11 — Gevoel & gedachte
     ["metus","vrees",11,"zn.",4],["terror","schrik / terreur",11,"zn.",4],
-    ["anxietās","bezorgdheid",11,"zn.",4],["sollicitūdō","ongerustheid",11,"zn.",4],
-    ["laetitia","vreugde",11,"zn.",4],["maeror","droefheid / verdriet",11,"zn.",4],
+    ["angor","benauwdheid / angst",11,"zn.",4],["scrūpulus","twijfel / gewetensbezwaar",11,"zn.",4],
+    ["exsultātiō","uitgelatenheid",11,"zn.",4],["maeror","droefheid / verdriet",11,"zn.",4],
     ["alacritās","vrolijkheid / ijver",11,"zn.",4],["tranquillitās","rust / kalmte",11,"zn.",4],
     // 12 — Abstracte begrippen
     ["effectus","gevolg / uitvoering",12,"zn.",4],["consequentia","gevolg / samenhang",12,"zn.",4],
@@ -303,17 +303,17 @@
     ["pactum","verdrag / afspraak",8,"zn.",5],["subsidium","hulp / reserve",8,"zn.",5],
     ["commeātus","verlof / bevoorrading",8,"zn.",5],["stīpendium","soldij / tribuut",8,"zn.",5],
     // 9 — Natuur & dieren
-    ["frutex","struik",9,"zn.",5],["herba","kruid / gras",9,"zn.",5],
+    ["frutex","struik",9,"zn.",5],["grāmen","gras",9,"zn.",5],
     ["nemus","bos / heilig bos",9,"zn.",5],["saltus","woudweide",9,"zn.",5],
     ["palūs","moeras",9,"zn.",5],["torrēns","bergstroom",9,"zn.",5],
     ["fretum","zeestraat",9,"zn.",5],["ōceanus","oceaan",9,"zn.",5],
     // 10 — Eten & drinken
     ["nūtrīmentum","voeding",10,"zn.",5],["victus","levensonderhoud",10,"zn.",5],
-    ["ientāculum","ontbijt",10,"zn.",5],["garum","vissaus",10,"zn.",5],
-    ["acetum","azijn",10,"zn.",5],["piper","peper",10,"zn.",5],
+    ["frūstulum","kleine brok",10,"zn.",5],["garum","vissaus",10,"zn.",5],
+    ["condīmentum","kruiding / saus",10,"zn.",5],["crocus","saffraan",10,"zn.",5],
     ["sapa","ingekookte druivensap",10,"zn.",5],["placenta","koek / gebak",10,"zn.",5],
     // 11 — Gevoel & gedachte
-    ["ōdium","haat",11,"zn.",5],["invidentia","afgunst",11,"zn.",5],
+    ["rancor","wrok",11,"zn.",5],["invidentia","afgunst",11,"zn.",5],
     ["aemulātiō","jaloezie / navolging",11,"zn.",5],["suspīciō","verdenking / vermoeden",11,"zn.",5],
     ["fidūcia","vertrouwen",11,"zn.",5],["pavor","schrik / angst",11,"zn.",5],
     ["horror","huivering / afschuw",11,"zn.",5],["īrācundia","woede / opvliegendheid",11,"zn.",5],
@@ -365,15 +365,15 @@
     ["excidiō","verwoesting / ondergang",8,"zn.",6],["dīreptiō","plundering",8,"zn.",6],
     ["captīvitās","gevangenschap",8,"zn.",6],["līberātiō","bevrijding",8,"zn.",6],
     // 9 — Natuur & dieren
-    ["formīca","mier",9,"zn.",6],["vespa","wesp",9,"zn.",6],
+    ["cicāda","cicade",9,"zn.",6],["vespa","wesp",9,"zn.",6],
     ["musca","vlieg",9,"zn.",6],["anguis","slang",9,"zn.",6],
-    ["serpēns","kruipend dier / slang",9,"zn.",6],["rāna","kikker",9,"zn.",6],
+    ["dracō","slang / draak",9,"zn.",6],["bufō","pad",9,"zn.",6],
     ["dēlphīnus","dolfijn",9,"zn.",6],["balaena","walvis",9,"zn.",6],
     // 10 — Eten & drinken
     ["hordeum","gerst",10,"zn.",6],["faba","boon",10,"zn.",6],
-    ["ōvum","ei",10,"zn.",6],["dulcia","zoetigheid / nagerecht",10,"zn.",6],
-    ["sitis","dorst",10,"zn.",6],["famēs","honger",10,"zn.",6],
-    ["gustus","smaak / proef",10,"zn.",6],["odor","geur",10,"zn.",6],
+    ["vitellus","eidooier",10,"zn.",6],["dulcia","zoetigheid / nagerecht",10,"zn.",6],
+    ["ardor","brandende dorst / hitte",10,"zn.",6],["inedia","onthouding van voedsel",10,"zn.",6],
+    ["sapor","smaak",10,"zn.",6],["odor","geur",10,"zn.",6],
     // 11 — Gevoel & gedachte
     ["superbia","trots / hoogmoed",11,"zn.",6],["arrogantia","aanmatiging",11,"zn.",6],
     ["humilitās","nederigheid",11,"zn.",6],["modestia","bescheidenheid",11,"zn.",6],
