@@ -88,3 +88,5 @@ Alles wat in `main` wordt gecommit, verschijnt automatisch op die link (GitHub P
 3. Laat het venster open staan. Elke wijziging in deze map wordt dan binnen ~2 seconden gepubliceerd.
 
 Zonder CLI: upload de bestanden via https://github.com/yousefabujarad2014-beep/StudiumGo/upload/main en zet Pages aan via https://github.com/yousefabujarad2014-beep/StudiumGo/settings/pages → **main / /(root)**.
+
+Elke commit verschijnt automatisch op de live site; met de watcher hierboven hoeft je ook het uploaden niet meer handmatig te doen.
