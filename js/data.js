@@ -392,10 +392,12 @@
 
   var WORDS = [];
   var seen = {};
-  for (var i = 0; i < RAW.length; i++) {
-    var row = RAW[i];
+  var ALL = RAW.concat(ADV);
+  var SKIPPED = [];
+  for (var i = 0; i < ALL.length; i++) {
+    var row = ALL[i];
     var key_normalized = normalize(row[0]);
-    if (seen[key_normalized]) continue;
+    if (seen[key_normalized]) { SKIPPED.push(row[0] + " (jaar " + row[4] + ")"); continue; }
     seen[key_normalized] = true;
     WORDS.push({
       id: key_normalized,
@@ -403,14 +405,16 @@
       dutch: row[1],
       caput: row[2],
       pos: row[3],
-      key: key_normalized
+      key: key_normalized,
+      level: row[4] || 0
     });
   }
 
-  // Elk leerjaar krijgt een eigen woordniveau binnen hetzelfde caput.
-  // Zo oefent 1e middelbaar niet de woorden van 3e middelbaar.
+  // De basiswoorden (zonder expliciet niveau) worden over leerjaar 1–3 verdeeld.
+  // De geavanceerde woorden hebben al een eigen niveau (4, 5 of 6).
   var perCaput = {};
   WORDS.forEach(function (w) {
+    if (w.level) return;
     if (!perCaput[w.caput]) perCaput[w.caput] = [];
     perCaput[w.caput].push(w);
   });
@@ -489,7 +493,10 @@
   var YEARS = [
     { n: 1, label: "1e middelbaar", short: "1e" },
     { n: 2, label: "2de middelbaar", short: "2de" },
-    { n: 3, label: "3de middelbaar", short: "3de" }
+    { n: 3, label: "3de middelbaar", short: "3de" },
+    { n: 4, label: "4e middelbaar", short: "4e" },
+    { n: 5, label: "5de middelbaar", short: "5de" },
+    { n: 6, label: "6de middelbaar", short: "6de" }
   ];
 
   var METHODS = [
@@ -585,6 +592,7 @@
     CONJUGATIONS: CONJUGATIONS,
     CASES: CASES,
     normalize: normalize,
+    SKIPPED: SKIPPED,
     byCaput: function (n) {
       if (!n || n === "all") return WORDS.slice();
       return WORDS.filter(function (w) { return w.caput === Number(n); });
