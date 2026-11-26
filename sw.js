@@ -1,5 +1,5 @@
 /* StudiumGo — service worker: offline cache */
-var CACHE = "studiumgo-v8";
+var CACHE = "studiumgo-v9";
 var ASSETS = [
   "./",
   "./index.html",

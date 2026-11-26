@@ -16,7 +16,7 @@ Het idee is vergelijkbaar met verbum.be (flashcards per caput, directe feedback,
 - 🏆 **Ranglijst** — vergelijk de lokale profielen op dit apparaat op punten, beheerste woorden en streaks.
 - 🧭 **Studiegids** — uitleg over Latijn leren, een plan voor je toetsdag, de vier stamtijden, studiedtips en een apart hoofdstuk voor **4e–6de middelbaar**.
 - ⚔️ **Stamtijden** — 30 werkwoorden met praesens, infinitief, perfectum en supinum, plus een oefenmodus.
-- 📜 **Grammatica** — naamvallen, vijf verbuigingen en vier vervoegingen in overzichtelijke tabellen.
+- 📜 **Grammatica** — naamvallen, vijf verbuigingen, vier vervoegingen, plus **tijden & wijzen** (imperfectum, plusquamperfectum, futura, passief, conjunctief) en **syntaxis** (AcI, ablativus absolutus, participia, gerundia).
 - 🔎 **Woordenboek** — zoek door alle woorden, met “beheerst"-label per woord.
 - 📕 **Foutenoverzicht** — exporteer je lastige woorden als **PDF/print** of **CSV**.
 - 🔥 **Streaks, dagelijks doel, punten en 10 prestaties**.
@@ -57,13 +57,13 @@ Een goed antwoord geeft 10 punten (5 als je een hint gebruikte). Na een goed ant
 ```
 index.html            alle schermen van de app
 styles.css            responsive vormgeving, licht/donker, print-stijl
-js/data.js            448 woorden, 3 leerjaren (Pegasus Novus 1/2/3), 12 capita, 30 stamtijden, grammatica
+js/data.js            736 woorden, 6 leerjaren (Pegasus Novus 1/2/3/4/5/6), 12 capita, 30 stamtijden, grammatica
 js/accounts.js        lokale profielen (gebruikersnaam + wachtwoord)
 js/storage.js         voortgang per account, spaced repetition, streaks, prestaties, eigen woorden
 js/audio.js           geluiden via Web Audio
 js/app.js             sessies, flashcards, leerjaren/capita, accounts, zoeken, export
 manifest.webmanifest  PWA-manifest + shortcuts
-sw.js                 offline cache (studiumgo-v8)
+sw.js                 offline cache (studiumgo-v9)
 assets/icons/         SVG- en PNG-iconen
 server.js             statische server (poort 4175)
 start-studium.bat     Windows-startknop
